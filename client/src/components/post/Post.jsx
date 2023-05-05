@@ -2,9 +2,10 @@ import "./post.css"
 import {MoreVert} from "@mui/icons-material"
 import { useEffect, useState } from "react"
 import axios from "axios"
+import {format} from "timeago.js"
 
 export default function Post({post}) {
-    const[like,setLike] = useState(post.like)
+    const[like,setLike] = useState(post.likes.length)
     const[isLiked,setIsLiked] = useState(false)
     const[user,setUser] = useState({})
     
@@ -16,7 +17,7 @@ export default function Post({post}) {
           setUser(res.data)
         };
        fetchUser();
-      },[]);
+      },[post.userId]);
 
     const likeHandler = ()=>{
         setLike(isLiked ? like-1 : like+1)
@@ -27,9 +28,9 @@ export default function Post({post}) {
         <div className="postWrapper">
             <div className="postTop">
                 <div className="postTopLeft">
-                    <img className="postProfileImg" src={user.profilePicture} alt="" />
+                    <img className="postProfileImg" src={user.profilePicture || PF+"person-pfp/4.png"} alt="" />
                     <span className="postUsername">{user.username}</span>
-                    <span className="postDate">{post.date}</span>
+                    <span className="postDate">{format(post.createdAt)}</span>
                 </div>
                 <div className="postTopRight">
                     <MoreVert/>
@@ -38,7 +39,7 @@ export default function Post({post}) {
             </div>
             <div className="postCenter">
                 <span className="postText">{post?.desc}</span>
-                <img className="postImg" src={PF+post.photo} alt="" />
+                <img className="postImg" src={PF+post.img} alt="" />
             </div>
             <div className="postBottom">
                 <div className="postBottomLeft">
