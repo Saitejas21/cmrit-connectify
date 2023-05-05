@@ -3,6 +3,8 @@ import { Users } from "../../dummyData";
 import Online from "../online/Online";
 
 export default function Rightbar({ profile }) {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+
   const HomeRightbar = () => {
     return (
       <>
@@ -45,7 +47,7 @@ export default function Rightbar({ profile }) {
         <div className="rightbarFollowings">
           <div className="rightbarFollowing">
             <img
-              src="assets/person-pfp/2.jpg"
+              src={`${PF}person-pfp/2.jpg`}
               alt=""
               className="rightbarFollowingImg"
             />
@@ -53,7 +55,7 @@ export default function Rightbar({ profile }) {
           </div>
           <div className="rightbarFollowing">
             <img
-              src="assets/person-pfp/3.gif"
+              src={`${PF}person-pfp/3.gif`}
               alt=""
               className="rightbarFollowingImg"
             />
@@ -61,7 +63,7 @@ export default function Rightbar({ profile }) {
           </div>
           <div className="rightbarFollowing">
             <img
-              src="assets/person-pfp/4.png"
+              src={`${PF}person-pfp/4.png`}
               alt=""
               className="rightbarFollowingImg"
             />
@@ -69,7 +71,7 @@ export default function Rightbar({ profile }) {
           </div>
           <div className="rightbarFollowing">
             <img
-              src="assets/person-pfp/5.jpg"
+              src={`${PF}person-pfp/5.jpg`}
               alt=""
               className="rightbarFollowingImg"
             />
@@ -77,7 +79,7 @@ export default function Rightbar({ profile }) {
           </div>
           <div className="rightbarFollowing">
             <img
-              src="assets/person-pfp/6.png"
+              src={`${PF}person-pfp/6.png`}
               alt=""
               className="rightbarFollowingImg"
             />
@@ -85,7 +87,7 @@ export default function Rightbar({ profile }) {
           </div>
           <div className="rightbarFollowing">
             <img
-              src="assets/person-pfp/pixil-frame-0 (1).png"
+              src={`${PF}person-pfp/pixil-frame-0 (1).png`}
               alt=""
               className="rightbarFollowingImg"
             />
